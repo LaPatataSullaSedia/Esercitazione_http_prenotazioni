@@ -6,7 +6,7 @@ import { PrenComponent } from './pren/pren.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,prenotazioni,PrenComponent],
+  imports: [RouterOutlet,PrenComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -16,7 +16,7 @@ export class AppComponent {
 
 
   salva(nome : HTMLInputElement,cognome : HTMLInputElement,indirizzo : HTMLInputElement,telefono : HTMLInputElement,email : HTMLInputElement,data : HTMLInputElement,ora : HTMLInputElement) : boolean{
-    this.pre.push(new prenotazioni(nome.value, cognome.value , indirizzo.value, 0 , email.value, 0,0))
+    this.pre.push(new prenotazioni(nome.value, cognome.value , indirizzo.value, 0 , email.value, new Date(data.value) ,0))
     return false
   }
 }

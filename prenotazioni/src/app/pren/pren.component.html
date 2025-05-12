@@ -1,3 +1,8 @@
 <div>
-    <button (click)="espandi()"> - {{cognome}} ha prenotato per il {{data}} alle {{ora}}.</button>
-</div>
+    <button (click)="espandi()"> - {{pre.cognome}} ha prenotato per il {{pre.data}} alle {{pre.ora}}.</button>
+</div><br /><br /><br /><br /><br />
+@if(dettagli){
+    <div>
+        <p>{{pre.nome}} {{pre.cognome}} ha prenotato per il {{pre.data}} alle {{pre.ora}}<br>{{pre.telefono}}<br>{{pre.email}}</p>
+    </div>
+}

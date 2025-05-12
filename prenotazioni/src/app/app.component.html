@@ -8,6 +8,6 @@
   <input type="number" #ora placeholder="ora prenotazine">
   <button (click)="salva(nome, cognome, indirizzo, telefono, email, data, ora)" >Salva</button>
 </div>
-@for(x of prenotazioni; track x){
-  <app-pren [prenotazioni] = "x"></app-pren>
+@for(x of pre; track x){
+  <app-pren [pre] = "x"></app-pren>
 }
