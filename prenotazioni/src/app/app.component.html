@@ -8,6 +8,11 @@
   <input type="number" #ora placeholder="ora prenotazine">
   <button (click)="salva(nome, cognome, indirizzo, telefono, email, data, ora)" >Salva</button>
 </div>
-@for(x of pre; track x){
-  <app-pren [pre] = "x"></app-pren>
+@if(loading)
+{
+    <div>loading...</div>
+}
+<pre>{{data | json}}</pre>
+@for(pren of data; track pren){
+  <div>{{pren.nome}} - {{pren.cognome}}</div>
 }
