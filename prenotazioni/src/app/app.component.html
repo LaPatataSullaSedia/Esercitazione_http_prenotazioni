@@ -1,18 +1,18 @@
 <div>
-  <input type="text" #nome placeholder="nome">
-  <input type="text" #cognome placeholder="cognome">
-  <input type="text" #indirizzo placeholder="indirizzo">
-  <input type="number" #telefono placeholder="telefono">
-  <input type="text" #email placeholder="email">
-  <input type="date" #data placeholder="data prenotazine">
-  <input type="number" #ora placeholder="ora prenotazine">
-  <button (click)="salva(nome, cognome, indirizzo, telefono, email, data, ora)" >Salva</button>
+  <input type="text" #nome placeholder="nome"><br />
+  <input type="text" #cognome placeholder="cognome"><br />
+  <input type="text" #indirizzo placeholder="indirizzo"><br />
+  <input type="number" #telefono placeholder="telefono"><br />
+  <input type="text" #email placeholder="email"><br />
+  <input type="date" #data placeholder="data prenotazine"><br />
+  <input type="time" #ora placeholder="ora prenotazine"><br />
+  <button (click)="salva(nome, cognome, indirizzo, telefono, email, data, ora)" >Salva</button><br />
 </div>
 @if(loading)
-{
-    <div>loading...</div>
-}
-<pre>{{data | json}}</pre>
-@for(pren of data; track pren){
-  <div>{{pren.nome}} - {{pren.cognome}}</div>
-}
+    {
+      <div>loading...</div>
+    }
+    <pre>{{data | json}}</pre>
+<div>
+  <app-lista-prenotazioni [pre]="pre"></app-lista-prenotazioni>
+</div>

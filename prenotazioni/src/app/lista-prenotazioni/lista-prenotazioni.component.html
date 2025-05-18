@@ -1,0 +1,6 @@
+@for (x of pre; track x) {
+    <button (click)="showDetails(x)">{{ x.data | date:'yyyy-MM-dd' }} - {{ x.ora }} -> {{ x.nome }} {{ x.cognome }}</button><br />
+}
+@if (dett) {
+    <app-dettagli-prenotazione [dett]="dett"></app-dettagli-prenotazione>
+}
