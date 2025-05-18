@@ -26,14 +26,7 @@ export class AppComponent implements OnInit{
   obsPost = new Observable<Response>;
   constructor(public http: HttpClient) {}
   
-  salva(
-    nome: HTMLInputElement,
-    cognome: HTMLInputElement,
-    indirizzo: HTMLInputElement,
-    telefono: HTMLInputElement,
-    email: HTMLInputElement,
-    data: HTMLInputElement,
-    ora: HTMLInputElement
+  salva(nome: HTMLInputElement,cognome: HTMLInputElement,indirizzo: HTMLInputElement,telefono: HTMLInputElement,email: HTMLInputElement,data: HTMLInputElement,ora: HTMLInputElement
   ): boolean {
     if (
       !nome.value || !cognome.value || !indirizzo.value ||
@@ -54,16 +47,10 @@ export class AppComponent implements OnInit{
       oraValue
     );
     this.loading = true;
-    console.log(JSON.stringify(this.nd));
-    this.obsPost = this.http.post<Response>(
-      'https://my-json-server.typicode.com/malizia-g/verificaPrenotazioni/prenotazioni',
-      JSON.stringify(this.nd)
-    );
+    this.obsPost = this.http.post<Response>('https://my-json-server.typicode.com/malizia-g/verificaPrenotazioni/prenotazioni',JSON.stringify(this.nd));
     this.obsPost.subscribe(this.indentificativo);
-  
     return false;
   }
-  
   
 
   indentificativo = (data :Response) => {
